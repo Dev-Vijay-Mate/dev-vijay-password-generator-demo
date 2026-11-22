@@ -2,6 +2,10 @@
 
 This is a small Vite app that installs and uses [`dev-vijay-simple-password-generator`](https://www.npmjs.com/package/dev-vijay-simple-password-generator).
 
+## Live demo
+
+[Open the Password Generator Demo](https://dev-vijay-mate.github.io/dev-vijay-password-generator-demo/)
+
 ## Run locally
 
 ```bash
