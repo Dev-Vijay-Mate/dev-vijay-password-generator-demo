@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101114">
+    <title>Password Generator — Live Demo</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M7 10V7a5 5 0 0 1 10 0v3m-11 0h12v10H6V10Z"/><path d="M12 14v2"/></svg>
+          </span>
+          <div>
+            <p class="eyebrow">DEV-VIJAY</p>
+            <h1>Password Generator</h1>
+          </div>
+        </div>
+        <a class="npm-link" href="https://www.npmjs.com/package/dev-vijay-simple-password-generator" target="_blank" rel="noreferrer">
+          <span>npm</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+      </header>
+
+      <section class="workspace" aria-label="Password generator">
+        <div class="password-card">
+          <label for="password">Generated password</label>
+          <div class="password-row">
+            <input id="password" type="text" readonly aria-live="polite">
+            <button id="copy-button" class="icon-button" type="button" aria-label="Copy password" title="Copy password">
+              <svg class="copy-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="11" height="11" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>
+              <svg class="check-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 7"/></svg>
+            </button>
+          </div>
+          <div class="strength" aria-label="Password strength">
+            <span class="strength-fill"></span>
+          </div>
+          <div class="strength-meta"><span id="strength-label">Strong password</span><span id="strength-count">16 characters</span></div>
+        </div>
+
+        <div class="controls-card">
+          <div class="length-control">
+            <div class="control-heading">
+              <label for="length">Password length</label>
+              <output id="length-output" for="length">16</output>
+            </div>
+            <input id="length" type="range" min="8" max="32" value="16">
+          </div>
+
+          <fieldset>
+            <legend>Character types</legend>
+            <label class="toggle-row"><span>Lowercase letters</span><input id="lowercase" type="checkbox" checked><span class="toggle"></span></label>
+            <label class="toggle-row"><span>Uppercase letters</span><input id="uppercase" type="checkbox" checked><span class="toggle"></span></label>
+            <label class="toggle-row"><span>Numbers</span><input id="numbers" type="checkbox" checked><span class="toggle"></span></label>
+            <label class="toggle-row"><span>Symbols</span><input id="symbols" type="checkbox" checked><span class="toggle"></span></label>
+          </fieldset>
+
+          <label class="toggle-row exclude-row"><span>Exclude ambiguous characters</span><input id="exclude-ambiguous" type="checkbox"><span class="toggle"></span></label>
+
+          <button id="generate-button" class="generate-button" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8.1 8.1 0 0 0-15.5-2M4 4v5h5M4 13a8.1 8.1 0 0 0 15.5 2M20 20v-5h-5"/></svg>
+            Generate password
+          </button>
+        </div>
+      </section>
+    </main>
+    <div id="toast" class="toast" role="status" aria-live="polite">Copied to clipboard</div>
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

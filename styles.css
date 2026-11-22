@@ -1,0 +1,218 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #101114;
+  color: #f5f6f7;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 50% 10%, rgba(93, 107, 255, 0.07), transparent 30rem),
+    #101114;
+}
+
+button, input { font: inherit; }
+
+.app {
+  width: min(1080px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 32px 0 64px;
+}
+
+.header {
+  height: 72px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 1px solid #292a2f;
+}
+
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #34363d;
+  border-radius: 10px;
+  background: #18191d;
+}
+.brand-mark svg { width: 21px; fill: none; stroke: #aab2ff; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.eyebrow { margin: 0 0 2px; color: #9296a3; font-size: 10px; font-weight: 800; letter-spacing: 0.18em; }
+h1 { margin: 0; font-size: 21px; line-height: 1.2; letter-spacing: -0.02em; }
+
+.npm-link {
+  height: 38px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #d8d9df;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  border: 1px solid #303136;
+  border-radius: 8px;
+  padding: 0 10px 0 13px;
+  background: #17181b;
+}
+.npm-link svg { width: 16px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(300px, 0.75fr);
+  gap: 20px;
+  margin-top: 34px;
+}
+
+.password-card, .controls-card {
+  border: 1px solid #2b2c31;
+  background: rgba(24, 25, 29, 0.88);
+  border-radius: 14px;
+}
+
+.password-card { padding: 26px; min-height: 190px; align-self: start; }
+.password-card label { display: block; margin-bottom: 13px; color: #9ea1ad; font-size: 12px; font-weight: 700; }
+.password-row { display: grid; grid-template-columns: 1fr 44px; gap: 10px; }
+#password {
+  width: 100%;
+  min-width: 0;
+  height: 54px;
+  border: 1px solid #383a42;
+  border-radius: 8px;
+  outline: none;
+  background: #121316;
+  color: #f7f7f8;
+  padding: 0 16px;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: clamp(15px, 2vw, 20px);
+  letter-spacing: 0.04em;
+}
+.icon-button {
+  width: 44px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #383a42;
+  border-radius: 8px;
+  background: #222329;
+  color: #cfd2dc;
+  cursor: pointer;
+}
+.icon-button:hover { background: #292a31; }
+.icon-button svg { width: 19px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.check-icon { display: none; }
+.icon-button.copied .copy-icon { display: none; }
+.icon-button.copied .check-icon { display: block; color: #7ee2a8; }
+
+.strength { height: 4px; margin-top: 18px; border-radius: 99px; background: #303137; overflow: hidden; }
+.strength-fill { display: block; height: 100%; width: 82%; border-radius: inherit; background: #7ee2a8; transition: width 180ms, background 180ms; }
+.strength-meta { display: flex; justify-content: space-between; margin-top: 9px; color: #7ee2a8; font-size: 11px; font-weight: 700; }
+.strength-meta span:last-child { color: #858894; }
+
+.controls-card { padding: 22px 24px 24px; }
+.control-heading { display: flex; justify-content: space-between; align-items: center; }
+.control-heading label, fieldset legend { color: #dfe1e6; font-size: 12px; font-weight: 800; }
+#length-output {
+  min-width: 38px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #3a3c44;
+  border-radius: 6px;
+  background: #222329;
+  color: #dfe1e6;
+  font-size: 12px;
+  font-weight: 800;
+}
+#length {
+  width: 100%;
+  height: 4px;
+  margin: 19px 0 23px;
+  accent-color: #9aa2ff;
+  cursor: pointer;
+}
+fieldset { margin: 0; padding: 0 0 12px; border: 0; border-bottom: 1px solid #303136; }
+fieldset legend { margin-bottom: 10px; }
+.toggle-row {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #bfc2cb;
+  font-size: 12px;
+  cursor: pointer;
+  position: relative;
+}
+.toggle-row input { position: absolute; opacity: 0; pointer-events: none; }
+.toggle {
+  width: 38px;
+  height: 22px;
+  border-radius: 99px;
+  background: #3a3b42;
+  position: relative;
+  transition: background 160ms;
+}
+.toggle::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  border-radius: 50%;
+  background: #a6a8b1;
+  transition: transform 160ms, background 160ms;
+}
+.toggle-row input:checked + .toggle { background: #747fe8; }
+.toggle-row input:checked + .toggle::after { transform: translateX(16px); background: #fff; }
+.exclude-row { margin-top: 10px; }
+.generate-button {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 12px;
+  border: 0;
+  border-radius: 8px;
+  background: #7d86ef;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(91, 101, 217, 0.16);
+}
+.generate-button:hover { background: #8b94f7; }
+.generate-button:active { transform: translateY(1px); }
+.generate-button svg { width: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  transform: translate(-50%, 20px);
+  padding: 10px 14px;
+  border: 1px solid #3b3d45;
+  border-radius: 8px;
+  background: #24252a;
+  color: #e7e8ec;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 180ms;
+}
+.toast.visible { opacity: 1; transform: translate(-50%, 0); }
+
+@media (max-width: 760px) {
+  .app { width: min(100% - 32px, 620px); padding-top: 20px; }
+  .header { height: 64px; }
+  .workspace { grid-template-columns: 1fr; margin-top: 20px; }
+  .password-card { min-height: 170px; }
+}
