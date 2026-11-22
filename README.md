@@ -14,3 +14,5 @@ npm run dev
 ```bash
 npm run build
 ```
+
+The GitHub Actions workflow deploys the built site to GitHub Pages on every push to `main`.
